@@ -60,12 +60,11 @@ if (video) {
 });
 
 //Adjust Volume//
-document.querySelector("#slider").addEventListener("input", function () {
-	var volume = this.value / 100;
-	video.volume = volume;
-	var volumeSpan = document.getElementById("volume");
-	volumeSpan.textContent = this.value + "%";
-	console.log("Volume is " + volume);
+document.getElementById("slider").addEventListener("input", function () {
+	var volumeValue = this.value / 100;
+	document.getElementById("volume").textContent = volumeValue
+	video.volume = volumeValue;
+	console.log("Volume is set to", volumeValue);
 });
 
 //Old School//
